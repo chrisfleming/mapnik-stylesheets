@@ -564,7 +564,7 @@
       <Filter>[landuse] = 'brownfield' or [landuse]='landfill' or [landuse] = 'greenfield' or [landuse]='construction'</Filter>
       &maxscale_zoom10;
       <PolygonSymbolizer>
-        <CssParameter name="fill">#9d9d6c</CssParameter>
+        <CssParameter name="fill">#c3c3b0</CssParameter>
         <CssParameter name="fill-opacity">0.7</CssParameter>
      </PolygonSymbolizer>
     </Rule>
@@ -597,27 +597,27 @@
      </PolygonSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[natural] = 'scrub'</Filter>
       &maxscale_zoom10;
-      &minscale_zoom13;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#b5e3b5</CssParameter>
-     </PolygonSymbolizer>
-    </Rule>
-    <Rule>
-      &maxscale_zoom14;
       <Filter>[natural] = 'scrub'</Filter>
       <PolygonPatternSymbolizer file="&symbols;/scrub.png" />
     </Rule>
     <Rule>
-      <Filter>[amenity] = 'university' or [amenity] = 'college' or [amenity] = 'school' or [amenity]='hospital' or [amenity]='kindergarten'</Filter>
+      <Filter>[edinburgh_fringe] != '' </Filter>
       &maxscale_zoom10;
       <PolygonSymbolizer>
-        <CssParameter name="fill">#f0f0d8</CssParameter>
+        <CssParameter name="fill">#000000</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+ 
+    <Rule>
+      <Filter>[edinburgh_fringe] != '' </Filter>
+      &maxscale_zoom10;
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#ff0000</CssParameter>
       </PolygonSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[amenity] = 'university' or [amenity] = 'college' or [amenity] = 'school' or [amenity]='hospital' or [amenity]='kindergarten'</Filter>
+      <Filter>[edinburgh_fringe] != ''</Filter>
       &maxscale_zoom12;
       <LineSymbolizer>
         <CssParameter name="stroke">brown</CssParameter>
@@ -731,7 +731,7 @@
     </Rule>
 </Style>
 <Style name="area-text">
-    <Rule>
+    <!--<Rule>
       <Filter>[way_area] &gt;= 150000</Filter>
       &maxscale_zoom14;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
@@ -750,7 +750,7 @@
       <Filter>[way_area] &lt; 20000</Filter>
       &maxscale_zoom17;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
-    </Rule>
+    </Rule>-->
 </Style>
 <Style name="highway-junctions">
     <Rule>
@@ -798,12 +798,12 @@
       <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="#734a08" dy="14" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[amenity]='parking' and ([access] = 'public' or not [access] != '')</Filter>
+      <Filter>[amenity]='parking' and ([access] = 'public' or not [access] &lt;&gt; '')</Filter>
       &maxscale_zoom17;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#0066ff" dy="9" halo_radius="1" wrap_width="34"/>
     </Rule>
     <Rule>
-      <Filter>[amenity]='parking' and ([access] != '' and not [access] = 'public')</Filter>
+      <Filter>[amenity]='parking' and ([access] &lt;&gt; '' and not [access] = 'public')</Filter>
       &maxscale_zoom17;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#66ccaf" dy="9" halo_radius="1" wrap_width="34"/>
     </Rule>
@@ -811,16 +811,6 @@
       <Filter>[amenity] = 'police'</Filter>
       &maxscale_zoom17;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#734a08" dy="10" halo_radius="1" wrap_width="30"/>
-    </Rule>
-    <Rule>
-      <Filter>[amenity] = 'fire_station'</Filter>
-      &maxscale_zoom17;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#734a08" dy="9" halo_radius="1" wrap_width="30"/>
-    </Rule>
-     <Rule>
-      <Filter>[amenity] = 'place_of_worship'</Filter>
-      &maxscale_zoom17;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000033" dy="11" halo_radius="1" wrap_width="30"/>
     </Rule>
     <Rule>
       <Filter>[natural] = 'wood'</Filter>
@@ -873,7 +863,7 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#6699cc" halo_radius="1" wrap_width="20"/>
     </Rule>
     <Rule>
-      <Filter>([leisure] != '' or [landuse] != '') and [point] = 'yes'</Filter>
+      <Filter>([leisure] &lt;&gt; '' or [landuse] &lt;&gt; '') and [point] = 'yes'</Filter>
       &maxscale_zoom15;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#000" halo_radius="2" wrap_width="10"/>
     </Rule>
@@ -986,19 +976,9 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#660033" halo_radius="2" wrap_width="10"/>
     </Rule>
     <Rule>
-      <Filter>[amenity] = 'university'</Filter>
+      <Filter>[edinburgh_fringe] != ''</Filter>
       &maxscale_zoom15;
-      <TextSymbolizer name="name" fontset_name="bold-fonts" size="9" fill="#000033" halo_radius="1" wrap_width="16"/>
-    </Rule>
-    <Rule>
-      <Filter>[amenity] = 'school' or [amenity] = 'college'</Filter>
-      &maxscale_zoom15;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#000033" halo_radius="1" wrap_width="14"/>
-    </Rule>
-    <Rule>
-      <Filter>[amenity] = 'kindergarten'</Filter>
-      &maxscale_zoom16;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#000033" halo_radius="1" wrap_width="14"/>
+      <TextSymbolizer name="edinburgh_fringe" fontset_name="bold-fonts" size="9" fill="#000033" halo_radius="1" wrap_width="16"/>
     </Rule>
     <Rule>
       <Filter>[man_made] = 'lighthouse'</Filter>
@@ -1223,7 +1203,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
       &maxscale_zoom13;
       &minscale_zoom13;
       <LineSymbolizer>
@@ -1233,7 +1213,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
       &maxscale_zoom14;
       &minscale_zoom14;
       <LineSymbolizer>
@@ -1243,7 +1223,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
       &maxscale_zoom15;
       &minscale_zoom15;
       <LineSymbolizer>
@@ -1253,7 +1233,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
       &maxscale_zoom16;
       &minscale_zoom16;
       <LineSymbolizer>
@@ -1273,7 +1253,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary' or [highway]='tertiary_link' or [highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <Filter>[highway] = 'tertiary' or [highway]='tertiary_link' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
       &maxscale_zoom17;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -1483,7 +1463,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
       &maxscale_zoom13;
       &minscale_zoom13;
       <LineSymbolizer>
@@ -1494,7 +1474,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
       &maxscale_zoom14;
       &minscale_zoom14;
       <LineSymbolizer>
@@ -1527,7 +1507,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
       &maxscale_zoom15;
       &minscale_zoom15;
       <LineSymbolizer>
@@ -1538,7 +1518,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
       &maxscale_zoom16;
       &minscale_zoom16;
       <LineSymbolizer>
@@ -1549,7 +1529,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
       &maxscale_zoom17;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -1978,7 +1958,7 @@
     </Rule>
    
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
       &maxscale_zoom13;
       &minscale_zoom13;
       <LineSymbolizer>
@@ -2002,7 +1982,7 @@
     </Rule>
     
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
       &maxscale_zoom14;
       &minscale_zoom14;
       <LineSymbolizer>
@@ -2013,7 +1993,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
       &maxscale_zoom15;
       &minscale_zoom15;
       <LineSymbolizer>
@@ -2024,7 +2004,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
       &maxscale_zoom16;
       &minscale_zoom16;
       <LineSymbolizer>
@@ -2046,7 +2026,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
+      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
       &maxscale_zoom17;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -2473,7 +2453,7 @@
     <Rule>
       &maxscale_zoom12;
       &minscale_zoom12;
-      <Filter>([highway] = 'proposed' or [highway]='construction') and not [construction] != ''</Filter>
+      <Filter>([highway] = 'proposed' or [highway]='construction') and not [construction] &lt;&gt;''</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#9cc</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -2543,7 +2523,7 @@
     <Rule>
       &maxscale_zoom13;
       &minscale_zoom15;
-      <Filter>([highway] = 'proposed' or [highway]='construction') and not [construction] != ''</Filter>
+      <Filter>([highway] = 'proposed' or [highway]='construction') and not [construction] &lt;&gt;''</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#9cc</CssParameter>
         <CssParameter name="stroke-width">4</CssParameter>
@@ -2641,7 +2621,7 @@
     <Rule>
       &maxscale_zoom16;
       &minscale_zoom18;
-      <Filter>([highway] = 'proposed' or [highway]='construction') and not [construction] != ''</Filter>
+      <Filter>([highway] = 'proposed' or [highway]='construction') and not [construction] &lt;&gt;''</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#9cc</CssParameter>
         <CssParameter name="stroke-width">8</CssParameter>
@@ -2979,7 +2959,7 @@
     <Rule>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <Filter>([railway] = 'disused' or [railway] = 'abandoned' or [railway]='construction') and not [highway] != ''</Filter>
+      <Filter>([railway] = 'disused' or [railway] = 'abandoned' or [railway]='construction') and not [highway] &lt;&gt; ''</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">grey</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -2990,7 +2970,7 @@
     <Rule>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <Filter>([railway] = 'disused' or [railway] = 'abandoned' or [railway]='construction') and not [highway] != '' and [bridge]='yes'</Filter>
+      <Filter>([railway] = 'disused' or [railway] = 'abandoned' or [railway]='construction') and not [highway] &lt;&gt; '' and [bridge]='yes'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
         <CssParameter name="stroke-width">6</CssParameter>
@@ -3307,7 +3287,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'unclassified') and not [tunnel] = 'yes'</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified') and not [tunnel] = 'yes'</Filter>
       &maxscale_zoom13;
       &minscale_zoom13;
       <LineSymbolizer>
@@ -3318,7 +3298,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'unclassified') and not [tunnel] = 'yes'</Filter>
+      <Filter>([highway] = 'residential'  or [highway] = 'minor' or [highway] = 'unclassified') and not [tunnel] = 'yes'</Filter>
       &maxscale_zoom14;
       &minscale_zoom14;
       <LineSymbolizer>
@@ -3329,7 +3309,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'unclassified') and not [tunnel] = 'yes'</Filter>
+      <Filter>([highway] = 'residential'  or [highway] = 'minor' or [highway] = 'unclassified') and not [tunnel] = 'yes'</Filter>
       &maxscale_zoom15;
       &minscale_zoom15;
       <LineSymbolizer>
@@ -3340,7 +3320,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'unclassified') and not [tunnel] = 'yes'</Filter>
+      <Filter>([highway] = 'residential'  or [highway] = 'minor' or [highway] = 'unclassified') and not [tunnel] = 'yes'</Filter>
       &maxscale_zoom16;
       &minscale_zoom16;
       <LineSymbolizer>
@@ -3351,7 +3331,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'unclassified') and not [tunnel] = 'yes'</Filter>
+      <Filter>([highway] = 'residential'  or [highway] = 'minor' or [highway] = 'unclassified') and not [tunnel] = 'yes'</Filter>
       &maxscale_zoom17;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -4435,7 +4415,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
       &maxscale_zoom14;
       &minscale_zoom14;
       <LineSymbolizer>
@@ -4444,7 +4424,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
       &maxscale_zoom15;
       &minscale_zoom15;
       <LineSymbolizer>
@@ -4453,7 +4433,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
       &maxscale_zoom16;
       &minscale_zoom16;
       <LineSymbolizer>
@@ -4462,7 +4442,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
       &maxscale_zoom17;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -4691,7 +4671,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'residential' or [highway] = 'unclassified'</Filter>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
       &maxscale_zoom14;
       &minscale_zoom14;
       <LineSymbolizer>
@@ -4702,7 +4682,7 @@
       </LineSymbolizer>
     </Rule>
    <Rule>
-      <Filter>[highway] = 'residential' or [highway] = 'unclassified'</Filter>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
       &maxscale_zoom15;
       &minscale_zoom15;
       <LineSymbolizer>
@@ -4713,7 +4693,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'residential' or [highway] = 'unclassified'</Filter>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
       &maxscale_zoom16;
       &minscale_zoom16;
       <LineSymbolizer>
@@ -4724,7 +4704,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'residential' or [highway] = 'unclassified'</Filter>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
       &maxscale_zoom17;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -6490,7 +6470,7 @@
     </Rule>
     <Rule>
       &maxscale_zoom16;
-      <Filter>[barrier] != '' and not [barrier] = 'hedge'</Filter>
+      <Filter>[barrier] &lt;&gt; '' and not [barrier] = 'hedge'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#444</CssParameter>
         <CssParameter name="stroke-width">0.4</CssParameter>
@@ -6516,7 +6496,7 @@
     </Rule>
     <Rule>
       &maxscale_zoom16;
-      <Filter>[barrier] != '' and not ([barrier] = 'hedge' or [barrier] = 'embankment')</Filter>
+      <Filter>[barrier] &lt;&gt; '' and not ([barrier] = 'hedge' or [barrier] = 'embankment')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#444</CssParameter>
         <CssParameter name="stroke-width">0.4</CssParameter>
@@ -6662,7 +6642,7 @@
     <StyleName>leisure</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,aeroway,amenity,landuse,leisure,man_made,military,"natural",power,tourism,name,highway,
+      (select way,aeroway,amenity,landuse,leisure,man_made,military,"natural",power,tourism,name,highway,edinburgh_fringe,
        case when religion in ('christian','jewish') then religion else 'INT-generic'::text end as religion
        from &prefix;_polygon
        where landuse is not null
@@ -6715,7 +6695,7 @@
     <StyleName>tunnels-fill</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway from &prefix;_line where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','tertiary_link','residential','unclassified') and tunnel in ('yes','true','1') order by z_order) as roads
+      (select way,highway from &prefix;_line where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','tertiary_link','residential','unclassified','minor') and tunnel in ('yes','true','1') order by z_order) as roads
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -6815,7 +6795,7 @@
        case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
        case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text else service end as service
        from &prefix;_line
-       where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','tertiary_link','residential','unclassified','road','service','pedestrian','raceway','living_street')
+       where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','tertiary_link','residential','unclassified','minor','road','service','pedestrian','raceway','living_street')
        order by z_order) as roads
       </Parameter>
       &datasource-settings;
@@ -7052,7 +7032,7 @@
     <StyleName>text</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,amenity,shop,access,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref,military,aeroway,waterway,historic,'yes'::text as point
+      (select way,amenity,shop,access,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref,military,aeroway,waterway,historic,edinburgh_fringe,'yes'::text as point
        from &prefix;_point
        where amenity is not null
           or shop in ('supermarket','bakery','clothes','fashion','convenience','doityourself','hairdresser','department_store','butcher','car','car_repair','bicycle','florist')
@@ -7066,6 +7046,7 @@
           or aeroway='gate'
           or waterway='lock'
           or historic in ('memorial','archaeological_site')
+          or edinburgh_fringe is not null
       ) as text
       </Parameter>
       &datasource-settings;
@@ -7075,7 +7056,7 @@
     <StyleName>text</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,aeroway,shop,access,amenity,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref,military,waterway,historic,'no'::text as point
+      (select edinburgh_fringe, way,aeroway,shop,access,amenity,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref,military,waterway,historic,'no'::text as point
        from &prefix;_polygon
        where amenity is not null
           or shop in ('supermarket','bakery','clothes','fashion','convenience','doityourself','hairdresser','department_store', 'butcher','car','car_repair','bicycle')
@@ -7087,6 +7068,7 @@
           or place='island'
           or military='danger_area'
           or historic in ('memorial','archaeological_site')
+          or edinburgh_fringe is not null
       ) as text
       </Parameter>
       &datasource-settings;
@@ -7099,7 +7081,7 @@
       (select way,way_area,name
        from &prefix;_polygon
        where name is not null
-         and (waterway is null or waterway != 'riverbank')
+         and (waterway is null or waterway &lt;&gt; 'riverbank')
        order by z_order,way_area desc
       ) as text
       </Parameter>

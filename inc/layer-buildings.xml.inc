@@ -14,27 +14,6 @@
          <CssParameter name="fill-opacity">0.5</CssParameter>
       </PolygonSymbolizer>
     </Rule>
-    <Rule>
-      <Filter>[amenity] = 'place_of_worship'</Filter>
-      &maxscale_zoom10;
-      &minscale_zoom14;
-      <PolygonSymbolizer>
-         <CssParameter name="fill">#777</CssParameter>
-         <CssParameter name="fill-opacity">0.5</CssParameter>
-      </PolygonSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[amenity] = 'place_of_worship'</Filter>
-      &maxscale_zoom15;
-      <PolygonSymbolizer>
-         <CssParameter name="fill">#aaa</CssParameter>
-         <CssParameter name="fill-opacity">0.9</CssParameter>
-      </PolygonSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#111</CssParameter>
-        <CssParameter name="stroke-width">0.3</CssParameter>
-      </LineSymbolizer>
-    </Rule>
 </Style>
 
 <Style name="buildings">
@@ -42,7 +21,7 @@
       <Filter>[building] = 'INT-light'</Filter>
       &maxscale_zoom12;
       <PolygonSymbolizer>
-         <CssParameter name="fill">#bca9a9</CssParameter>
+         <CssParameter name="fill">#f2eadb</CssParameter>
          <CssParameter name="fill-opacity">0.7</CssParameter>
       </PolygonSymbolizer>
     </Rule>
@@ -50,28 +29,13 @@
       <Filter>[building] != 'INT-light' and [building] != ''</Filter>
       &maxscale_zoom12;
       <PolygonSymbolizer>
-         <CssParameter name="fill">#bca9a9</CssParameter>
+         <CssParameter name="fill">#f2eadb</CssParameter>
          <CssParameter name="fill-opacity">0.9</CssParameter>
       </PolygonSymbolizer>
     </Rule>
     <Rule>
       <Filter>[building] != 'INT-light' and [building] != ''</Filter>
       &maxscale_zoom16;
-      <LineSymbolizer>
-        <CssParameter name="stroke">#330066</CssParameter>
-        <CssParameter name="stroke-width">0.2</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[aeroway] = 'terminal'</Filter>
-      &maxscale_zoom12;
-      <PolygonSymbolizer>
-         <CssParameter name="fill">#cc99ff</CssParameter>
-      </PolygonSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[aeroway] = 'terminal'</Filter>
-      &maxscale_zoom14;
       <LineSymbolizer>
         <CssParameter name="stroke">#330066</CssParameter>
         <CssParameter name="stroke-width">0.2</CssParameter>
